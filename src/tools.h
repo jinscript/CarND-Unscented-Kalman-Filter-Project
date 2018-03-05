@@ -33,6 +33,11 @@ public:
    * A helper method to derive state from laser measurement.
   */
   VectorXd DeriveStateFromLaserMeas(const VectorXd &meas);
+
+  /**
+   * A helper method to derive NIS.
+   */
+  double DeriveNIS(const VectorXd &z_diff, const MatrixXd &S);
 };
 
 #endif /* TOOLS_H_ */

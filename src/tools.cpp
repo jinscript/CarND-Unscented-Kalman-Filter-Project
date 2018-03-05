@@ -73,3 +73,7 @@ VectorXd Tools::DeriveStateFromLaserMeas(const VectorXd &meas) {
 	x(1) = meas(1);
 	return x;
 }
+
+double Tools::DeriveNIS(const VectorXd &z_diff, const MatrixXd &S) {
+	return z_diff.transpose() * S.inverse() * z_diff;
+}
