@@ -24,6 +24,15 @@ public:
   */
   VectorXd CalculateRMSE(const vector<VectorXd> &estimations, const vector<VectorXd> &ground_truth);
 
+  /**
+   * A helper method to derive state from radar measurement.
+  */
+  VectorXd DeriveStateFromRadarMeas(const VectorXd &meas);
+
+  /**
+   * A helper method to derive state from laser measurement.
+  */
+  VectorXd DeriveStateFromLaserMeas(const VectorXd &meas);
 };
 
 #endif /* TOOLS_H_ */
