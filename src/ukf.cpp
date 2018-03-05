@@ -104,8 +104,8 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
     }
 
     // tune covariance matrix
-    P_(0, 0) = std_laspx_;
-    P_(1, 1) = std_laspy_;
+    P_(0, 0) = std_laspx_ * std_laspx_;
+    P_(1, 1) = std_laspy_ * std_laspy_;
 
     if (meas_package.sensor_type_ == MeasurementPackage::RADAR) {
       x_ = tools.DeriveStateFromRadarMeas(meas_package.raw_measurements_);
